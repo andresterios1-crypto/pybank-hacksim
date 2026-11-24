@@ -147,7 +147,12 @@ def login():
         query = "SELECT * FROM users WHERE username = '" + username + "'"
         # .execute()       -> one statement only (blocks ';'-stacked attacks)
         # .executescript() -> many statements allowed (DROP TABLE etc. work!)
-        user = get_db().executescript(query).fetchone()
+        user = get_db().execute(query).fetchone()
+        # If this used .executescript() instead (see below), a login attempt
+        # could carry a second, stacked command -- and we saw the consequences:
+        # an input like  '; DROP TABLE users; --  would delete the whole table.
+        # .execute() stops that by allowing only one statement per call.
+        # user = get_db().executescript(query).fetchone()
 
         if user and check_password_hash(user["password_hash"], password):
             session.clear()
