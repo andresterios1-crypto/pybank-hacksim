@@ -1,0 +1,8 @@
+# Generated at runtime by init_db() — rebuilt fresh on first run
+database.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

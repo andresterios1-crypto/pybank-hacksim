@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Log in · PyBank{% endblock %}
+
+{% block content %}
+<div class="card login-card">
+    <h1>Welcome back</h1>
+    <p class="muted">Log in to your PyBank account.</p>
+
+    <form method="POST" action="{{ url_for('login') }}">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required autofocus>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Log in</button>
+    </form>
+
+    <details class="demo-accounts">
+        <summary>Demo accounts</summary>
+        <ul>
+            <li><code>alice</code> / <code>alice123</code></li>
+            <li><code>bob</code> / <code>bob123</code></li>
+            <li><code>charlie</code> / <code>charlie123</code></li>
+        </ul>
+    </details>
+</div>
+{% endblock %}

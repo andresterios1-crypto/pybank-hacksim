@@ -1,0 +1,95 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f3f5f9;
+    color: #1d2433;
+    line-height: 1.5;
+}
+
+/* ---------- navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1e3a8a;
+    color: white;
+}
+.navbar a { color: white; text-decoration: none; }
+.logo { font-size: 1.3rem; font-weight: 700; }
+.nav-links a { margin-left: 1.5rem; opacity: 0.85; }
+.nav-links a:hover { opacity: 1; text-decoration: underline; }
+
+/* ---------- layout ---------- */
+.container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+h1 { margin-bottom: 1rem; }
+h2 { margin-bottom: 1rem; font-size: 1.2rem; }
+.muted { color: #6b7280; }
+.right { text-align: right; }
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.login-card, .form-card { max-width: 400px; margin: 3rem auto; }
+
+/* ---------- balance ---------- */
+.balance-card { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; }
+.balance-card .muted { color: #dbeafe; }
+.balance { font-size: 2.5rem; font-weight: 700; margin: 0.25rem 0 1rem; }
+.balance-card .button { background: white; color: #1e3a8a; }
+
+/* ---------- forms ---------- */
+label { display: block; margin: 1rem 0 0.3rem; font-weight: 600; font-size: 0.9rem; }
+input, select {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+input:focus, select:focus { outline: 2px solid #3b82f6; border-color: transparent; }
+
+button, .button {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.7rem 1.4rem;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+form button { width: 100%; }
+button:hover, .button:hover { filter: brightness(1.1); }
+
+/* ---------- table ---------- */
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.7rem 0.5rem; border-bottom: 1px solid #e5e7eb; text-align: left; }
+th { font-size: 0.8rem; text-transform: uppercase; color: #6b7280; }
+.positive { color: #16a34a; font-weight: 600; }
+.negative { color: #dc2626; font-weight: 600; }
+
+/* ---------- flash messages ---------- */
+.flash { padding: 0.8rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.flash-error   { background: #fee2e2; color: #991b1b; }
+.flash-success { background: #dcfce7; color: #166534; }
+
+/* ---------- demo accounts box ---------- */
+.demo-accounts { margin-top: 1.5rem; font-size: 0.9rem; color: #6b7280; }
+.demo-accounts summary { cursor: pointer; }
+.demo-accounts ul { margin: 0.5rem 0 0 1.25rem; }
+code { background: #f3f4f6; padding: 0.1rem 0.35rem; border-radius: 4px; }
+
+@media (max-width: 600px) {
+    .navbar { flex-direction: column; gap: 0.5rem; }
+    .nav-links a { margin: 0 0.6rem; }
+    .balance { font-size: 2rem; }
+}
